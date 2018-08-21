@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/CromwellTOT/faer_website/issues"
   },
-  "homepage": "https://github.com/CromwellTOT/faer_website#readme"
+  "homepage": "https://faer-website.appspot.com/",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
