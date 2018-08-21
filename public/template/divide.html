@@ -1,0 +1,79 @@
+<div class="container">
+	<div class="row">
+		<!-- display -->
+		<div class="col-sm-12">
+			<h1 id="header" style="text-align: center;"><i style="font-size: 35px;">❤ </i>橙子<i style="font-size: 35px;">❤ </i>的价格分配表</h1>
+			<hr>
+			<div id="inputs">
+				<div class="row">
+					<div class="col-sm-4">
+						<input type="number" ng-model="totalGross" ng-change="updateTotal()" placeholder="Gross Total">
+					</div>
+					<div class="col-sm-4">
+						<input type="number" ng-model="totalMonth" ng-change="updateTotal()" placeholder="12">
+					</div>
+					<div class="col-sm-4">
+						<input type="number" ng-model="freeMonth" ng-change="updateTotal()" placeholder="0">
+					</div>
+				</div>
+
+				<p>Net Price: {{totalNet | currency : number : 2}}</p>
+			</div>
+			
+			<hr>
+			<!-- options -->
+			<div class="row" id="options">
+				OPTIONS:<br>
+				<div class="col-sm-3">
+					<label for="singleSelect">户型: </label>
+					<select name="singleSelect" ng-model="huxing" ng-change="updateHuXing()">
+						<option value="twoBed">2b2b</option>
+						<option value="oneBed">1b1b</option>
+					</select>
+				</div>
+				<div class="col-sm-3">
+					Net
+					<!-- Rectangular switch -->
+					<label name="switch" class="switch">
+					  <input type="checkbox" ng-model="option.calBasedOnGross">
+					  <span class="slider"></span>
+					</label>
+					Gross
+				</div>
+			</div>
+			<hr>
+			<!-- table -->
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>gross</th>
+						<th>net</th>
+						<th>percentage</th>
+					</tr>
+				</thead>
+				<tbody id='tableBody'>
+					<tr id='mainBed'>
+						<th>{{mainBed.name}}</th>
+						<td>{{mainBed.gross | currency : number : 2}}</td>
+						<td>{{mainBed.net | currency : number : 2}}</td>
+						<td>{{mainBed.percentage | percentage : 2}}</td>
+					</tr>
+					<tr id='secondBed'>
+						<th>{{secondBed.name}}</th>
+						<td>{{secondBed.gross | currency : number : 2}}</td>
+						<td>{{secondBed.net | currency : number : 2}}</td>
+						<td>{{secondBed.percentage | percentage : 2}}</td>
+					</tr>
+					<tr id='livingRoom'>
+						<th>{{livingRoom.name}}</th>
+						<td>{{livingRoom.gross | currency : number : 2}}</td>
+						<td>{{livingRoom.net | currency : number : 2}}</td>
+						<td>{{livingRoom.percentage | percentage : 2}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
